@@ -1,0 +1,26 @@
+{
+  "name": "smartcare-react",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "setup": "npm install && npm --prefix server install",
+    "server": "npm --prefix server run dev",
+    "server:start": "npm --prefix server start",
+    "seed": "npm --prefix server run seed",
+    "dev:all": "concurrently -n web,api -c cyan,green \"npm run dev\" \"npm run server\"",
+    "start": "npm run build && npm run server:start"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.21",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

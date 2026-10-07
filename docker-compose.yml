@@ -1,0 +1,10 @@
+# Local MongoDB only:  docker compose up -d
+# then use MONGODB_URI=mongodb://127.0.0.1:27017/smartcare in server/.env
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports: ["27017:27017"]
+    volumes: ["smartcare-mongo:/data/db"]
+volumes:
+  smartcare-mongo:
